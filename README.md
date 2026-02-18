@@ -1,16 +1,72 @@
-# React + Vite
+# Game of Thrones - Projet React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Un projet React permettant d'explorer l'univers de Game of Thrones en affichant les maisons et leurs membres grâce à l'API A Song of Ice and Fire.
 
-Currently, two official plugins are available:
+## Objectif du projet
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Créer une application web avec 3 étapes et des bonus :
 
-## React Compiler
+### Étape 1 : Afficher les maisons
+- Récupérer les maisons depuis l'API : https://www.anapioficeandfire.com/api/houses
+- Afficher la liste dans la sidebar noire (gauche)
+- BONUS : Utiliser un composant House réutilisable
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Étape 2 : Afficher les membres
+- Cliquer sur une maison pour voir ses membres
+- Les membres s'affichent dans la zone de contenu (droite)
+- Chaque membre affiche : nom + bouton "Détails"
+- BONUS : Utiliser un composant Personnage réutilisable
 
-## Expanding the ESLint configuration
+### Étape 3 : Afficher les détails
+- Cliquer sur "Détails" pour ouvrir une popup
+- Afficher les infos complètes du personnage (nom, genre, culture, titres, etc.)
+- BONUS : Utiliser un composant Popup réutilisable
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Architecture du projet
+
+```
+src/
+├── components/
+│   ├── gameOfThrones.jsx       (composant principal)
+│   ├── House.jsx               (composant pour chaque maison)
+│   ├── Personnage.jsx          (composant pour chaque personnage)
+│   ├── Popup.jsx               (composant pour les détails)
+│   └── GameOfThrones.module.css (styles)
+├── App.jsx
+├── main.jsx
+└── index.css
+```
+
+## Composants créés
+
+1. House.jsx - Affiche une maison cliquable dans la sidebar
+2. Personnage.jsx - Affiche un personnage avec bouton "Détails"
+3. Popup.jsx - Affiche les détails complets du personnage
+
+## Fonctionnalités
+
+- Récupération de données depuis une API externe
+- Interaction utilisateur (clics sur maisons et personnages)
+- Composants réutilisables pour une meilleure organisation
+- Utilisation de React Hooks (useState, useEffect)
+- Layout responsive avec sidebar et contenu principal
+
+## Installation et lancement
+
+```bash
+# Installer les dépendances
+npm install
+
+# Lancer le serveur de développement
+npm run dev
+
+# Accéder à l'application
+# http://localhost:5173
+```
+
+## Technologies utilisées
+
+- React 19 - Framework JavaScript
+- Vite - Build tool rapide
+- CSS Modules - Styles scopés
+- API A Song of Ice and Fire - Source de données
