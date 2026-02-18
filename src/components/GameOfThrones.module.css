@@ -1,0 +1,127 @@
+/* Conteneur principal */
+.layout {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Sidebar gauche (boîte noire) */
+.sidebar {
+    width: 300px;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border-right: 3px solid #333;
+    overflow-y: scroll;
+}
+
+.sidebar h2 {
+    color: white;
+    border-bottom: 2px solid #444;
+    padding-bottom: 10px;
+}
+
+/* Chaque élément maison */
+.houseItem {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.houseItem:hover {
+    background-color: #2a2a2a;
+}
+
+/* Zone de contenu droite (boîte grise) */
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: #ecf0f1;
+    overflow-y: scroll;
+}
+
+.content h2 {
+    color: #2c3e50;
+}
+
+/* Carte membre - pour chaque personnage */
+.memberCard {
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: white;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.memberCard p {
+    margin: 0;
+    color: #2c3e50;
+}
+
+/* Bouton détails */
+.detailsButton {
+    padding: 8px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.detailsButton:hover {
+    background-color: #2980b9;
+}
+
+/* ÉTAPE 3: Popup pour les détails */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popupContent {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+}
+
+.popupContent h2 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.popupContent p {
+    margin: 10px 0;
+    color: #2c3e50;
+}
+
+/* Bouton fermer */
+.closeButton {
+    padding: 10px 30px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.closeButton:hover {
+    background-color: #c0392b;
+}
